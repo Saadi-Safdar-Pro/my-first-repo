@@ -1,0 +1,59 @@
+/* Make body background light gray and set sans-serif font */
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 80%;
+  border: 2px solid #81d48c;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+p {
+  color: #555;
+  text-align: center;
+  margin: 10px 0;
+}
+
+body {
+  background-color: #d9eef5;
+  font-family: sans-serif;
+}
+
+.about-box {
+  background-color: #dce68a;
+  padding: 20px;
+  margin: 30px auto;
+  border: 2px solid #81d48c;
+  width: 300px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #83f0ea;
+  text-align: center;
+  line-height: 100px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: #e238b8;
+  padding: 30px;
+  text-align: center;
+}
+

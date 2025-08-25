@@ -1,0 +1,49 @@
+/* body {
+  font-family: sans-serif;
+  background-color: #8af59c;
+  color: hsl(0, 100%, 51%);
+} */
+
+/* 
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+} */
+/* 
+
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+  background-color: #f86b6b;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+} */
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+input, button {
+  margin: 10px 0;
+  padding: 8px;
+}

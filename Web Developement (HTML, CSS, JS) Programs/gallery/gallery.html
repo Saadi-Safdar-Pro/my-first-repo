@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <h2>My Gallery</h2>
+  <img id="mainImage" src="https://picsum.photos/id/1015/400/250" alt="Main" style="display: block; margin-bottom: 20px;">
+
+  <div class="thumbnails">
+    <img src="https://picsum.photos/id/1015/100/60" onclick="changeImage(this)">
+    <img src="https://picsum.photos/id/1025/100/60" onclick="changeImage(this)">
+    <img src="https://picsum.photos/id/1035/100/60" onclick="changeImage(this)">
+    <img src="https://picsum.photos/id/1045/100/60" onclick="changeImage(this)">
+  </div>
+
+  <script>
+    function changeImage(thumb) {
+      document.getElementById("mainImage").src = thumb.src.replace('/100/60', '/400/250');
+    }
+  </script>
+</body>
+</html>
