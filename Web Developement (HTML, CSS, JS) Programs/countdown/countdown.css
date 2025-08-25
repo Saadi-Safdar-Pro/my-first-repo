@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+  background: #55afd8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.countdown-container {
+  text-align: center;
+  background: rgb(12, 2, 39);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.time-boxes {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.time-boxes div {
+  background: #d0f403;
+  color: rgb(248, 1, 1);
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  min-width: 70px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Flex Layout Example</title>
+        <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+  <header>
+  <h1>Welcome to My Portfolio</h1>
+</header>
+
+<main>
+  <p>This is the main content of the page.</p>
+
+
+  <!-- Create a flex container with 3 equal boxes -->
+  <div class="flex-container">
+    <div class="flex-box">Box 1</div>
+    <div class="flex-box">Box 2</div>
+
+  </div>
+
+
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .flex-box {
+      flex: 1;
+      background: #b2f7ef;
+      padding: 40px;
+      text-align: center;
+      border: 2px solid #81d48c;
+      font-size: 1.2em;
+    }
+  </style>
+
+</main>
+
+<footer>
+  <p>© 2025 Saadi Safder</p>
+</footer>
+
+</body>
+</html>

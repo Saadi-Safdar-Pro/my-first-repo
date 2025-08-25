@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>File Size Converter</title>
+  <link rel="stylesheet" href="size.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>File Size Converter</h1>
+
+    <input type="number" id="inputValue" placeholder="Enter value" />
+
+    <select id="inputUnit">
+      <option value="B">Bytes (B)</option>
+      <option value="KB">Kilobytes (KB)</option>
+      <option value="MB">Megabytes (MB)</option>
+      <option value="GB">Gigabytes (GB)</option>
+      <option value="TB">Terabytes (TB)</option>
+    </select>
+
+    <button onclick="convertSize()">Convert</button>
+
+    <div id="results"></div>
+  </div>
+
+  <script src="convert.js"></script>
+</body>
+</html>
