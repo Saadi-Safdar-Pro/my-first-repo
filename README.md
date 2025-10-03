@@ -1,25 +1,23 @@
-# JavaScript Projects
+# Web Development Projects
 
-Collection of JavaScript applications and scripts showcasing DOM manipulation, event handling, and API integration.
+Frontend projects built with HTML, CSS, and JavaScript.
 
 ## 🚀 Featured Projects
 
-### To-Do List
-- Add, edit, and delete tasks
-- Demonstrates DOM manipulation and local storage
+### Portfolio Website
+- Personal portfolio with multiple sections
+- Responsive design using HTML and CSS
 
-### Calculator
-- Basic arithmetic operations
-- Interactive UI with JavaScript event handling
+### Landing Page
+- Modern layout with clean styling
+- Interactive navigation with JavaScript
 
-### Weather App
-- Fetches live weather data using APIs
-- Demonstrates JSON parsing and asynchronous programming
+### Form Validation App
+- Real-time input validation
+- Error handling and UI feedback
 
 ## 🛠️ Skills Demonstrated
-- JavaScript fundamentals
-- DOM manipulation and events
-- Fetch API and JSON handling
-- Local storage
-- Error handling and debugging
-
+- HTML5 and semantic structure
+- CSS3 styling and responsive design
+- JavaScript interactivity
+- UI/UX design fundamentals
