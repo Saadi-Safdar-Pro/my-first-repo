@@ -1,29 +1,17 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-
-using namespace std;
 
 // int main() 
 // {
-    
 //     int arr[100];
 //     for (int i = 0; i < 100; ++i) 
 //     {
 //         arr[i] = rand() % 100; 
 //     }
-
 //     for (int i = 0; i < 100; ++i) 
 //     {
 //         cout << "arr[" << i << "] = " << arr[i] << endl;
 //     }
 //     return 0;
-
 // }
-
-
-
-
 
 
 // int main()
@@ -39,7 +27,6 @@ using namespace std;
 // 	int max=arr[0];
 // 	int min=arr[0];
 // 	int sum=0;
-
 //     for(int i=0;i<n;i++)
 //     {
 //         sum+=arr[i];
@@ -75,10 +62,8 @@ using namespace std;
 //         {4, 5, 6},
 //         {7, 8, 9}
 //     };
-
 //     cout << "Element at 2nd row, 3rd column is: " << arr[1][2] << endl;
 //     cout << "Element at 3rd row, 1st column is: " << arr[2][0] << endl;
-
 //     return 0;
 // }
 
@@ -106,21 +91,21 @@ using namespace std;
 
 
 
-// int main() 
-// {
-//     srand(rand());
-
-//     cout << "Rolling a die 10 times:" << endl;
-
-//     for (int i = 0; i < 10; ++i) 
-    
-//     {
-//         int roll = (rand() % 6) + 1;
-//         cout << "Roll " << (i + 1) << ": " << roll << endl;
-//     }
-
-//     return 0;
-// }
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main() 
+{
+    srand(rand());
+    cout << "Rolling a die 10 times:" << endl;
+    for (int i = 0; i < 10; ++i) 
+    {
+        int roll = (rand() % 6) + 1;
+        cout << "Roll " << (i + 1) << ": " << roll << endl;
+    }
+    return 0;
+}
     
 
 
