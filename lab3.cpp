@@ -69,43 +69,41 @@
 
 
 
-
-// int factorial(int n) {
-//     int result = 1;
-//     for (int i = 1; i <= n; i++) {
-//         result = result * i;
-//     }
-//     return result;
-// }
-
-// int main() {
-//     int n;
-//     cout << "Enter a number: ";
-//     cin >> n;
-    
-//         int result = factorial(n);
-//         cout << "Factorial is " << result << endl;
-// }
-
-
-
-
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-int main() 
-{
-    srand(rand());
-    cout << "Rolling a die 10 times:" << endl;
-    for (int i = 0; i < 10; ++i) 
-    {
-        int roll = (rand() % 6) + 1;
-        cout << "Roll " << (i + 1) << ": " << roll << endl;
+int factorial(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result = result * i;
     }
-    return 0;
+    return result;
 }
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    
+        int result = factorial(n);
+        cout << "Factorial is " << result << endl;
+}
+
+
+
+
+
+// int main() 
+// {
+//     srand(rand());
+//     cout << "Rolling a die 10 times:" << endl;
+//     for (int i = 0; i < 10; ++i) 
+//     {
+//         int roll = (rand() % 6) + 1;
+//         cout << "Roll " << (i + 1) << ": " << roll << endl;
+//     }
+//     return 0;
+// }
     
 
 
