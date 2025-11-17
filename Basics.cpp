@@ -95,3 +95,122 @@ int main()
     
 }
 
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     cout << "Build and launch from /build folder successful!" << endl;
+//     return 0;
+// }
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     cout << "Build folder test successful!" << endl;
+//     return 0;
+// }
+
+
+
+
+// #include <iostream>
+// #include <vector>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+//     cout << "🎉 VSCode C++ Setup is Working Perfectly!" << endl;
+//     cout << "GCC Version: " << __VERSION__ << endl;
+    
+//     // Test some C++ features
+//     vector<string> messages = {"Hello", "World", "from", "C++"};
+    
+//     for (const auto& word : messages) {
+//         cout << word << " ";
+//     }
+//     cout << endl;
+    
+//     cout << "✅ Compiler: GCC " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__ << endl;
+//     cout << "✅ C++ Standard: " << __cplusplus << endl;
+    
+//     return 0;
+// }
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     double temp;
+//     char scale;
+
+//     cout << "Enter temperature followed by scale (C/F): ";
+//     cin >> temp >> scale;
+
+//     if (scale == 'C' || scale == 'c') {
+//         double f = (temp * 9 / 5) + 32;
+//         cout << temp << "°C = " << f << "°F" << endl;
+//     } else if (scale == 'F' || scale == 'f') {
+//         double c = (temp - 32) * 5 / 9;
+//         cout << temp << "°F = " << c << "°C" << endl;
+//     } else {
+//         cout << "Invalid scale. Use C or F." << endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     cout << "C++ setup working successfully!" << endl;
+//     return 0;
+// }
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     cout << "Executable placed in build folder successfully!" << endl;
+//     return 0;
+// }
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     cout << "Executable successfully generated inside C++/build folder!" << endl;
+//     return 0;
+// }
