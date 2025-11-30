@@ -315,17 +315,17 @@
 
 
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() {
-    int n, fact = 1;
-    cin >> n;
+// int main() {
+//     int n, fact = 1;
+//     cin >> n;
     
-    for(int i=1; i<=n; i++) {
-        fact = fact * i;
-    }
+//     for(int i=1; i<=n; i++) {
+//         fact = fact * i;
+//     }
     
-    cout << fact;
-    return 0;
-}
+//     cout << fact;
+//     return 0;
+// }

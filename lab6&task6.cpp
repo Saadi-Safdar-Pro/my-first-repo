@@ -311,134 +311,134 @@
 
 
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-};
+// struct Node {
+//     int data;
+//     Node* next;
+// };
 
-class LinkedList {
-private:
-    Node* head;
-    Node* tail;
+// class LinkedList {
+// private:
+//     Node* head;
+//     Node* tail;
 
-public:
-    LinkedList() {
-        head = NULL;
-        tail = NULL;
-    }
+// public:
+//     LinkedList() {
+//         head = NULL;
+//         tail = NULL;
+//     }
 
-    Node* createNode(int value) {
-        Node* temp = new Node;
-        temp->data = value;
-        temp->next = NULL;
-        return temp;
-    }
+//     Node* createNode(int value) {
+//         Node* temp = new Node;
+//         temp->data = value;
+//         temp->next = NULL;
+//         return temp;
+//     }
 
-    void insertBegin(int value) {
-        Node* temp = createNode(value);
-        if (head == NULL) {
-            head = tail = temp;
-        } else {
-            temp->next = head;
-            head = temp;
-        }
-    }
+//     void insertBegin(int value) {
+//         Node* temp = createNode(value);
+//         if (head == NULL) {
+//             head = tail = temp;
+//         } else {
+//             temp->next = head;
+//             head = temp;
+//         }
+//     }
 
-    void insertLast(int value) {
-        Node* temp = createNode(value);
-        if (head == NULL) {
-            head = tail = temp;
-        } else {
-            tail->next = temp;
-            tail = temp;
-        }
-    }
+//     void insertLast(int value) {
+//         Node* temp = createNode(value);
+//         if (head == NULL) {
+//             head = tail = temp;
+//         } else {
+//             tail->next = temp;
+//             tail = temp;
+//         }
+//     }
 
-    void insertPos(int value, int pos) {
-        if (pos < 1) {
-            cout << "Position should be >= 1\n";
-            return;
-        }
-        if (pos == 1) {
-            insertBegin(value);
-            return;
-        }
-        Node* temp = createNode(value);
-        Node* current = head;
-        for (int i = 1; i < pos - 1; i++) {
-            if (current == NULL) {
-                cout << "Position out of range\n";
-                return;
-            }
-            current = current->next;
-        }
-        if (current == NULL) {
-            cout << "Position out of range\n";
-            return;
-        }
-        temp->next = current->next;
-        current->next = temp;
-        if (temp->next == NULL) {
-            tail = temp;
-        }
-    }
+//     void insertPos(int value, int pos) {
+//         if (pos < 1) {
+//             cout << "Position should be >= 1\n";
+//             return;
+//         }
+//         if (pos == 1) {
+//             insertBegin(value);
+//             return;
+//         }
+//         Node* temp = createNode(value);
+//         Node* current = head;
+//         for (int i = 1; i < pos - 1; i++) {
+//             if (current == NULL) {
+//                 cout << "Position out of range\n";
+//                 return;
+//             }
+//             current = current->next;
+//         }
+//         if (current == NULL) {
+//             cout << "Position out of range\n";
+//             return;
+//         }
+//         temp->next = current->next;
+//         current->next = temp;
+//         if (temp->next == NULL) {
+//             tail = temp;
+//         }
+//     }
 
-    void display() {
-        if (head == NULL) {
-            cout << "List is empty\n";
-            return;
-        }
-        Node* current = head;
-        cout << "Linked List: ";
-        while (current != NULL) {
-            cout << current->data << " -> ";
-            current = current->next;
-        }
-        cout << "NULL\n";
-    }
-};
+//     void display() {
+//         if (head == NULL) {
+//             cout << "List is empty\n";
+//             return;
+//         }
+//         Node* current = head;
+//         cout << "Linked List: ";
+//         while (current != NULL) {
+//             cout << current->data << " -> ";
+//             current = current->next;
+//         }
+//         cout << "NULL\n";
+//     }
+// };
 
-int main() {
-    LinkedList list;
-    int choice, value, pos;
-    do {
-        cout << "\n--- Linked List Operations ---\n";
-        cout << "1. Insert at Beginning\n";
-        cout << "2. Insert at End\n";
-        cout << "3. Insert at Position\n";
-        cout << "4. Display List\n";
-        cout << "5. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            cout << "Enter value: "; cin >> value;
-            list.insertBegin(value);
-            break;
-        case 2:
-            cout << "Enter value: "; cin >> value;
-            list.insertLast(value);
-            break;
-        case 3:
-            cout << "Enter value: "; cin >> value;
-            cout << "Enter position: "; cin >> pos;
-            list.insertPos(value, pos);
-            break;
-        case 4:
-            list.display();
-            break;
-        case 5:
-            cout << "Exiting...\n";
-            break;
-        default:
-            cout << "Invalid choice!\n";
-        }
-    } while (choice != 5);
-    return 0;
-}
+// int main() {
+//     LinkedList list;
+//     int choice, value, pos;
+//     do {
+//         cout << "\n--- Linked List Operations ---\n";
+//         cout << "1. Insert at Beginning\n";
+//         cout << "2. Insert at End\n";
+//         cout << "3. Insert at Position\n";
+//         cout << "4. Display List\n";
+//         cout << "5. Exit\n";
+//         cout << "Enter your choice: ";
+//         cin >> choice;
+//         switch (choice) {
+//         case 1:
+//             cout << "Enter value: "; cin >> value;
+//             list.insertBegin(value);
+//             break;
+//         case 2:
+//             cout << "Enter value: "; cin >> value;
+//             list.insertLast(value);
+//             break;
+//         case 3:
+//             cout << "Enter value: "; cin >> value;
+//             cout << "Enter position: "; cin >> pos;
+//             list.insertPos(value, pos);
+//             break;
+//         case 4:
+//             list.display();
+//             break;
+//         case 5:
+//             cout << "Exiting...\n";
+//             break;
+//         default:
+//             cout << "Invalid choice!\n";
+//         }
+//     } while (choice != 5);
+//     return 0;
+// }
 
 
 

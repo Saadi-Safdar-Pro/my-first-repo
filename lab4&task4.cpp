@@ -1,5 +1,8 @@
-//  int main()
+// #include <iostream>
+// using namespace std;
+// int main()
 // {
+
 //     int arr[50], size, pos;
     
 //     cout<<"Enter array size: ";
@@ -130,7 +133,6 @@
 // • Calculate how many marks are currently stored.
 // Instructions:
 // 1. Declare an integer array to store student marks.
-
 // 2. Take the number of students from the user.
 // 3. Perform insertion to add marks into the array.
 // 4. Implement linear search to find whether a specific mark exists.
