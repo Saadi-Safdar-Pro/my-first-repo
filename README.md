@@ -2,22 +2,22 @@
 
 Frontend projects built with HTML, CSS, and JavaScript.
 
-## 🚀 Featured Projects
+## 🚀 What it is
+A collection of small, focused frontend demos and practice projects for learning and experimenting with common web techniques (UI components, DOM manipulation, browser APIs, and basic app patterns).
 
-### Portfolio Website
-- Personal portfolio with multiple sections
-- Responsive design using HTML and CSS
+## 🛠️ What’s used
+- HTML5 (semantic markup)  
+- CSS3 (responsive layout, Flexbox/Grid)  
+- JavaScript (ES6+) — main language for interactivity  
+- TypeScript (used in some demos)  
+- Browser APIs: Fetch, LocalStorage, Canvas, Web Audio, SpeechSynthesis, etc.
 
-### Landing Page
-- Modern layout with clean styling
-- Interactive navigation with JavaScript
+## ⚡ How to run
+- Clone the repo and open a project's HTML file in your browser, or run a simple static server (e.g., VS Code Live Server or `python -m http.server`).
 
-### Form Validation App
-- Real-time input validation
-- Error handling and UI feedback
+## 🔎 Notes
+- Some demos store data in localStorage.  
+- Projects using TypeScript need compilation to JavaScript.  
+- API-based demos may require keys and modern browsers.
 
-## 🛠️ Skills Demonstrated
-- HTML5 and semantic structure
-- CSS3 styling and responsive design
-- JavaScript interactivity
-- UI/UX design fundamentals
+Author: Saadi-Safdar-Pro
