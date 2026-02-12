@@ -1,0 +1,182 @@
+✅ FINAL CONFIGURATION & TEST PLAN
+Grandstand Connect — Phase‑2 (VLANs & Trunking) + Phase‑3 (DHCP)
+(Exactly as implemented)
+
+🟦 STEP 1 — CORE SWITCH (VLANs + TRUNKS)
+📍 Run ONLY on: Core Switch
+
+enable
+configure terminal
+
+vlan 10
+vlan 20
+vlan 30
+vlan 40
+vlan 50
+
+interface range fa0/1 - 5
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40,50
+ no shutdown
+
+end
+write memory
+🟦 STEP 2 — ACCESS SWITCHES (ONE BY ONE)
+📍 Run on: SW‑ADMIN, SW‑TICKET, SW‑GUEST, SW‑SEC, SW‑MEDIA
+
+🔹 2.1 VLAN CREATION (Run ONCE per switch)
+enable
+configure terminal
+
+vlan 10
+ name ADMIN
+vlan 20
+ name TICKETING
+vlan 30
+ name GUEST
+vlan 40
+ name SECURITY
+vlan 50
+ name MEDIA
+
+end
+write memory
+🔹 2.2 ACCESS PORT CONFIGURATION (CRITICAL)
+⚠️ Interface ranges match connected devices.
+
+SW‑ADMIN → VLAN 10 (16 devices)
+configure terminal
+interface range fa0/1 - 16
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+end
+write memory
+SW‑TICKET → VLAN 20 (21 devices)
+configure terminal
+interface range fa0/1 - 21
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+end
+write memory
+SW‑GUEST → VLAN 30 (23 devices)
+configure terminal
+interface range fa0/1 - 23
+ switchport mode access
+ switchport access vlan 30
+ no shutdown
+end
+write memory
+SW‑SEC → VLAN 40 (14 devices)
+configure terminal
+interface range fa0/1 - 14
+ switchport mode access
+ switchport access vlan 40
+ no shutdown
+end
+write memory
+SW‑MEDIA → VLAN 50 (7 devices)
+configure terminal
+interface range fa0/1 - 7
+ switchport mode access
+ switchport access vlan 50
+ no shutdown
+end
+write memory
+🔹 2.3 UPLINK CONFIGURATION (MANDATORY)
+📍 Run on EACH access switch
+
+configure terminal
+interface gig0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40,50
+ no shutdown
+end
+write memory
+🟦 STEP 3 — ROUTER (ROUTER‑ON‑A‑STICK + DHCP)
+📍 Run ONLY on: Router
+
+🔹 3.1 SUB‑INTERFACES (Inter‑VLAN Routing)
+enable
+configure terminal
+
+interface gig0/0
+ no shutdown
+
+interface gig0/0.10
+ encapsulation dot1Q 10
+ ip address 10.1.0.1 255.255.255.0
+
+interface gig0/0.20
+ encapsulation dot1Q 20
+ ip address 10.2.0.1 255.255.255.0
+
+interface gig0/0.30
+ encapsulation dot1Q 30
+ ip address 10.3.0.1 255.255.255.0
+
+interface gig0/0.40
+ encapsulation dot1Q 40
+ ip address 10.4.0.1 255.255.255.0
+
+interface gig0/0.50
+ encapsulation dot1Q 50
+ ip address 10.5.0.1 255.255.255.0
+🔹 3.2 DHCP CONFIGURATION (ALL VLANs)
+ip dhcp excluded-address 10.1.0.1 10.1.0.10
+ip dhcp excluded-address 10.2.0.1 10.2.0.10
+ip dhcp excluded-address 10.3.0.1 10.3.0.10
+ip dhcp excluded-address 10.4.0.1 10.4.0.10
+ip dhcp excluded-address 10.5.0.1 10.5.0.10
+
+ip dhcp pool ADMIN
+ network 10.1.0.0 255.255.255.0
+ default-router 10.1.0.1
+ dns-server 8.8.8.8
+
+ip dhcp pool TICKETING
+ network 10.2.0.0 255.255.255.0
+ default-router 10.2.0.1
+ dns-server 8.8.8.8
+
+ip dhcp pool GUEST
+ network 10.3.0.0 255.255.255.0
+ default-router 10.3.0.1
+ dns-server 8.8.8.8
+
+ip dhcp pool SECURITY
+ network 10.4.0.0 255.255.255.0
+ default-router 10.4.0.1
+ dns-server 8.8.8.8
+
+ip dhcp pool MEDIA
+ network 10.5.0.0 255.255.255.0
+ default-router 10.5.0.1
+ dns-server 8.8.8.8
+
+end
+write memory
+🟦 STEP 4 — END DEVICES (PCS)
+📍 On EVERY PC
+Desktop → IP Configuration → DHCP
+⏱ Wait 5–10 seconds
+
+🟦 STEP 5 — FINAL VERIFICATION COMMANDS
+Router
+show ip interface brief
+show ip dhcp binding
+Core Switch
+show vlan brief
+show interfaces trunk
+Any Access Switch
+show vlan brief
+show interfaces trunk
+✅ SUCCESS CRITERIA (EXAMINER CHECKLIST)
+✔ PCs receive IP addresses automatically
+✔ IPs fall within correct VLAN subnet
+✔ Router shows DHCP bindings
+✔ All uplinks operate as trunks
+✔ No end device remains in VLAN 1
+
+
