@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spinner Test</title>
+  <script type="module">
+    import 'ldrs/Cardio'
+    import 'ldrs/Ring'
+    import 'ldrs/Ring 2'
+    import 'ldrs/Tailspin'
+    import 'ldrs/Line Spinner'
+    import 'ldrs/Squircle'
+    import 'ldrs/Square'
+    import 'ldrs/Reuleaux'
+    import 'ldrs/Tail Chase'
+    import 'ldrs/Dot Spinner'
+    import 'ldrs/Spiral'
+    import 'ldrs/Bouncy'
+    import 'ldrs/Treadmill'
+    import 'ldrs/Bouncy Arc'
+    import 'ldrs/Waveform'
+    import 'ldrs/Hatch'
+    import 'ldrs/Hourglass'
+    import 'ldrs/Zoomies'
+    import 'ldrs/Line Wobble'
+    import 'ldrs/Infinity'
+    import 'ldrs/Trefoil'
+    import 'ldrs/Helix'
+    import 'ldrs/Grid'
+    import 'ldrs/Quantum'
+    import 'ldrs/Wobble'
+    import 'ldrs/Orbit'
+    import 'ldrs/Chaotic Orbit'
+    import 'ldrs/Superballs'
+    import 'ldrs/Trio'
+    import 'ldrs/Momentum'
+    import 'ldrs/Dot Wave'
+    import 'ldrs/Leapfrog'
+    import 'ldrs/Dot Stream'
+    import 'ldrs/Dot Pulse'
+    import 'ldrs/Metronome'
+    import 'ldrs/Jelly'
+    import 'ldrs/Jelly Triangle '
+    import 'ldrs/Mirage'
+    import 'ldrs/Ping'
+    import 'ldrs/Pulsar'
+    import 'ldrs/Ripples'
+    import 'ldrs/Miyagi'
+    import 'ldrs/Pinwheel'
+  </script>
+</head>
+<body>
+  <h1>Loader Example</h1>
+  <l-ring size="60" color="coral">
+
+  </l-ring>
+</body>
+<!-- 
+
+<div
+  class="container"
+>
+<div class="dot"></div>
+<div class="traveler"></div>
+</div>
+<svg width="0" height="0" class="svg">
+  <defs>
+    <filter id="uib-jelly-triangle-ooze">
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="3.333"
+        result="blur"
+      />
+      <feColorMatrix
+        in="blur"
+        mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        result="ooze"
+      />
+      <feBlend in="SourceGraphic" in2="ooze" />
+    </filter>
+  </defs>
+</svg>
+
+<style>
+  .container {
+    --uib-size: 30px;
+    --uib-color: black;
+    --uib-speed: 1.75s;
+    position: relative;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    filter: url('#uib-jelly-triangle-ooze');
+  }
+
+  .container::before,
+  .container::after,
+  .dot {
+    content: '';
+    position: absolute;
+    width: 33%;
+    height: 33%;
+    background-color: var(--uib-color);
+    border-radius: 100%;
+    will-change: transform;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot {
+    top: 6%;
+    left: 30%;
+    animation: grow var(--uib-speed) ease infinite;
+  }
+
+  .container::before {
+    bottom: 6%;
+    right: 0;
+    animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.666) infinite;
+  }
+
+  .container::after {
+    bottom: 6%;
+    left: 0;
+    animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.333) infinite;
+  }
+
+  .traveler {
+    position: absolute;
+    top: 6%;
+    left: 30%;
+    width: 33%;
+    height: 33%;
+    background-color: var(--uib-color);
+    border-radius: 100%;
+    animation: triangulate var(--uib-speed) ease infinite;
+    transition: background-color 0.3s ease;
+  }
+
+  .svg {
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  @keyframes triangulate {
+    0%,
+    100% {
+      transform: none;
+    }
+
+    33.333% {
+      transform: translate(120%, 175%);
+    }
+
+    66.666% {
+      transform: translate(-95%, 175%);
+    }
+  }
+
+  @keyframes grow {
+    0%,
+    85%,
+    100% {
+      transform: scale(1.5);
+    }
+
+    50%,
+    60% {
+      transform: scale(0);
+    }
+  }
+</style>
+ -->
+
+
+<!-- <div class="container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<style>
+  .container {
+    --uib-size: 47px;
+    --uib-color: black;
+    --uib-speed: 1s;
+    --uib-dot-size: calc(var(--uib-size) * 0.18);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: calc(var(--uib-size) * 0.5);
+    width: var(--uib-size);
+  }
+
+  .dot {
+    flex-shrink: 0;
+    width: calc(var(--uib-size) * 0.17);
+    height: calc(var(--uib-size) * 0.17);
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transition: background-color 0.3s ease;
+  }
+
+  .dot:nth-child(1) {
+    animation: jump var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.45)
+      infinite;
+  }
+
+  .dot:nth-child(2) {
+    animation: jump var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.3)
+      infinite;
+  }
+
+  .dot:nth-child(3) {
+    animation: jump var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.15)
+      infinite;
+  }
+
+  .dot:nth-child(4) {
+    animation: jump var(--uib-speed) ease-in-out infinite;
+  }
+
+  @keyframes jump {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-200%);
+    }
+  }
+</style>
+ -->
+
+
+<!-- 
+<svg
+  class="container" 
+  x="0px" 
+  y="0px"
+  viewBox="0 0 50 31.25"
+  height="31.25"
+  width="50"
+  preserveAspectRatio='xMidYMid meet'
+>
+  <path 
+    class="track"
+    stroke-width="4" 
+    fill="none" 
+    pathlength="100"
+    d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
+  />
+  <path 
+    class="car"
+    stroke-width="4" 
+    fill="none" 
+    pathlength="100"
+    d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
+  />
+</svg>
+
+<style>
+  .container {
+    --uib-size: 45px;
+    --uib-color: black;
+    --uib-speed: 1.75s;
+    --uib-bg-opacity: .1;
+    height: 31.25px;
+    width: 50px;
+    transform-origin: center;
+    overflow: visible;
+  }
+
+  .car {
+    stroke: var(--uib-color);
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation:
+      travel var(--uib-speed) ease-in-out infinite,
+      fade var(--uib-speed) ease-out infinite;
+    will-change: stroke-dasharray, stroke-dashoffset;
+    transition: stroke 0.5s ease;
+  }
+
+  .track {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+  }
+
+  @keyframes travel {
+    0% {
+      stroke-dashoffset: 100;
+    }
+
+    75% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    20%,
+    55% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+ -->
+
+<!-- <svg
+  class="container"
+  viewBox="0 0 40 40"
+  height="40"
+  width="40"
+>
+  <circle 
+    class="track"
+    cx="20" 
+    cy="20" 
+    r="17.5" 
+    pathlength="100" 
+    stroke-width="5px" 
+    fill="none" 
+  />
+  <circle 
+    class="car"
+    cx="20" 
+    cy="20" 
+    r="17.5" 
+    pathlength="100" 
+    stroke-width="5px" 
+    fill="none" 
+  />
+</svg>
+
+<style>
+  .container {
+    --uib-size: 40px;
+    --uib-color: black;
+    --uib-speed: .8s;
+    --uib-bg-opacity: 0.1;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    transform-origin: center;
+    animation: rotate var(--uib-speed) linear infinite;
+    will-change: transform;
+    overflow: visible;
+  }
+
+  .car {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 25, 75;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    transition: stroke 0.5s ease;
+  }
+
+  .track {
+    fill: none;
+    stroke: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+    transition: stroke 0.5s ease;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<svg 
+    class="container" 
+    x="0px" 
+    y="0px" 
+    viewBox="0 0 37 37" 
+    height="37" 
+    width="37" 
+    preserveAspectRatio="xMidYMid meet"
+  >
+  <path 
+    class="track" 
+    fill="none" 
+    stroke-width="5" 
+    pathLength="100" d="M0.37 18.5 C0.37 5.772 5.772 0.37 18.5 0.37 S36.63 5.772 36.63 18.5 S31.228 36.63 18.5 36.63 S0.37 31.228 0.37 18.5">
+  </path>
+  <path 
+    class="car" 
+    fill="none" 
+    stroke-width="5" 
+    pathLength="100" 
+    d="M0.37 18.5 C0.37 5.772 5.772 0.37 18.5 0.37 S36.63 5.772 36.63 18.5 S31.228 36.63 18.5 36.63 S0.37 31.228 0.37 18.5">
+  </path>
+</svg>
+
+<style>
+  .container {
+    --uib-size: 37px;
+    --uib-color: black;
+    --uib-speed: .9s;
+    --uib-bg-opacity: .1;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    transform-origin: center;
+    overflow: visible;
+  }
+
+  .car {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 15, 85;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: travel var(--uib-speed) linear infinite;
+    will-change: stroke-dasharray, stroke-dashoffset;
+    transition: stroke 0.5s ease;
+  }
+
+  .track {
+    stroke: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+    transition: stroke 0.5s ease;
+  }
+
+  @keyframes travel {
+    0% {
+      stroke-dashoffset: 0;
+    }
+
+    100% {
+      stroke-dashoffset: -100;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+
+<style>
+  .container {
+    --uib-size: 35px;
+    --uib-color: black;
+    --uib-speed: .9s;
+    --uib-stroke: 3.5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--uib-size);
+    width: var(--uib-size);
+  }
+
+  .line {
+    position: absolute;
+    top: calc(50% - var(--uib-stroke) / 2);
+    left: 0;
+    height: var(--uib-stroke);
+    width: 100%;
+    border-radius: calc(var(--uib-stroke) / 2);
+    background-color: var(--uib-color);
+    animation: rotate var(--uib-speed) ease-in-out infinite;
+    transition: background-color 0.3s ease;
+  }
+
+  .line:nth-child(1) {
+    animation-delay: calc(var(--uib-speed) * -0.375);
+  }
+
+  .line:nth-child(2) {
+    animation-delay: calc(var(--uib-speed) * -0.375);
+    opacity: 0.8;
+  }
+
+  .line:nth-child(3) {
+    animation-delay: calc(var(--uib-speed) * -0.3);
+    opacity: 0.6;
+  }
+
+  .line:nth-child(4) {
+    animation-delay: calc(var(--uib-speed) * -0.225);
+    opacity: 0.4;
+  }
+
+  .line:nth-child(5) {
+    animation-delay: calc(var(--uib-speed) * -0.15);
+    opacity: 0.2;
+  }
+
+  .line:nth-child(6) {
+    animation-delay: calc(var(--uib-speed) * -0.075);
+    opacity: 0.1;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+</style>
+
+<div
+  class="container"
+>
+<div class="dot"></div>
+<div class="traveler"></div>
+</div>
+<svg width="0" height="0" class="svg">
+  <defs>
+    <filter id="uib-jelly-triangle-ooze">
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="3.333"
+        result="blur"
+      />
+      <feColorMatrix
+        in="blur"
+        mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        result="ooze"
+      />
+      <feBlend in="SourceGraphic" in2="ooze" />
+    </filter>
+  </defs>
+</svg>
+
+<style>
+  .container {
+    --uib-size: 30px;
+    --uib-color: black;
+    --uib-speed: 1.75s;
+    position: relative;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    filter: url('#uib-jelly-triangle-ooze');
+  }
+
+  .container::before,
+  .container::after,
+  .dot {
+    content: '';
+    position: absolute;
+    width: 33%;
+    height: 33%;
+    background-color: var(--uib-color);
+    border-radius: 100%;
+    will-change: transform;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot {
+    top: 6%;
+    left: 30%;
+    animation: grow var(--uib-speed) ease infinite;
+  }
+
+  .container::before {
+    bottom: 6%;
+    right: 0;
+    animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.666) infinite;
+  }
+
+  .container::after {
+    bottom: 6%;
+    left: 0;
+    animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.333) infinite;
+  }
+
+  .traveler {
+    position: absolute;
+    top: 6%;
+    left: 30%;
+    width: 33%;
+    height: 33%;
+    background-color: var(--uib-color);
+    border-radius: 100%;
+    animation: triangulate var(--uib-speed) ease infinite;
+    transition: background-color 0.3s ease;
+  }
+
+  .svg {
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  @keyframes triangulate {
+    0%,
+    100% {
+      transform: none;
+    }
+
+    33.333% {
+      transform: translate(120%, 175%);
+    }
+
+    66.666% {
+      transform: translate(-95%, 175%);
+    }
+  }
+
+  @keyframes grow {
+    0%,
+    85%,
+    100% {
+      transform: scale(1.5);
+    }
+
+    50%,
+    60% {
+      transform: scale(0);
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="dot"></div>
+</div>
+
+<style>
+  .container {
+    --uib-size: 45px;
+    --uib-color: black;
+    --uib-speed: 2s;
+    position: relative;
+    height: var(--uib-size);
+    width: var(--uib-size);
+  }
+
+  .container::before,
+  .container::after,
+  .dot::before,
+  .dot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    animation: pulse var(--uib-speed) linear infinite;
+    transform: scale(0);
+    opacity: 0;
+    transition: background-color 0.3s ease;
+  }
+
+  .container::after {
+    animation-delay: calc(var(--uib-speed) / -4);
+  }
+
+  .dot::before {
+    animation-delay: calc(var(--uib-speed) * -0.5);
+  }
+
+  .dot::after {
+    animation-delay: calc(var(--uib-speed) * -0.75);
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<style>
+  .container {
+    --uib-size: 78px;
+    --uib-color: black;
+    --uib-speed: 1.4s;
+    position: relative;
+    top: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--uib-size) * 0.51);
+    height: calc(var(--uib-size) * 0.51);
+  }
+
+  .dot {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    transform-origin: center top;
+  }
+
+  .dot::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 25%;
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transition: background-color 0.3s ease;
+  }
+
+  .dot:first-child {
+    animation: swing var(--uib-speed) linear infinite;
+  }
+
+  .dot:last-child {
+    animation: swing2 var(--uib-speed) linear infinite;
+  }
+
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: ease-out;
+    }
+
+    25% {
+      transform: rotate(70deg);
+      animation-timing-function: ease-in;
+    }
+
+    50% {
+      transform: rotate(0deg);
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes swing2 {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: linear;
+    }
+
+    50% {
+      transform: rotate(0deg);
+      animation-timing-function: ease-out;
+    }
+
+    75% {
+      transform: rotate(-70deg);
+      animation-timing-function: ease-in;
+    }
+  }
+</style>
+
+<svg
+  class="container" 
+  x="0px" 
+  y="0px"
+  viewBox="0 0 50 31.25"
+  height="31.25"
+  width="50"
+  preserveAspectRatio='xMidYMid meet'
+>
+  <path 
+    class="track"
+    stroke-width="4" 
+    fill="none" 
+    pathlength="100"
+    d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
+  />
+  <path 
+    class="car"
+    stroke-width="4" 
+    fill="none" 
+    pathlength="100"
+    d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
+  />
+</svg>
+
+<style>
+  .container {
+    --uib-size: 45px;
+    --uib-color: black;
+    --uib-speed: 1.75s;
+    --uib-bg-opacity: .1;
+    height: 31.25px;
+    width: 50px;
+    transform-origin: center;
+    overflow: visible;
+  }
+
+  .car {
+    stroke: var(--uib-color);
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation:
+      travel var(--uib-speed) ease-in-out infinite,
+      fade var(--uib-speed) ease-out infinite;
+    will-change: stroke-dasharray, stroke-dashoffset;
+    transition: stroke 0.5s ease;
+  }
+
+  .track {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+  }
+
+  @keyframes travel {
+    0% {
+      stroke-dashoffset: 100;
+    }
+
+    75% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    20%,
+    55% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+ -->
+<!-- <div class="container"></div>
+
+<style>
+  .container {
+    --uib-size: 80px;
+    --uib-color: black;
+    --uib-speed: 1.4s;
+    --uib-stroke: 5px;
+    --uib-bg-opacity: .1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--uib-stroke);
+    width: var(--uib-size);
+    border-radius: calc(var(--uib-stroke) / 2);
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+    transition: background-color 0.3s ease;
+  }
+
+  .container::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: calc(var(--uib-stroke) / 2);
+    animation: zoom var(--uib-speed) ease-in-out infinite;
+    transform: translateX(-100%);
+    background-color: var(--uib-color);
+    transition: background-color 0.3s ease;
+  }
+
+  @keyframes zoom {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style> -->
+
+
+</html>
