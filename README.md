@@ -1,10 +1,10 @@
-# 🧪 Extra
+# 🧠 Practice
 
-This repository includes:
+This repository contains my daily coding practice including:
 
-- Experiments
-- Test projects
-- Random ideas
-- Learning material
+- Algorithms
+- Data Structures
+- Logic building
+- Problem solving
 
-🎯 Goal: Explore and learn freely.
+🎯 Goal: Improve problem-solving and coding efficiency.
