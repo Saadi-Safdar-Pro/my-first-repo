@@ -1,7 +1,3 @@
-# =====================================================
-# Repo-wide common ignores (deduplicated)
-# =====================================================
-
 # ============================
 # OS and Temp Files
 # ============================
@@ -30,18 +26,6 @@ Thumbs.db
 # Python
 # ============================
 __pycache__/
-<<<<<<< HEAD
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-
-# Virtual environments
-.venv/
-venv/
-env/
-.env/
-=======
 *.pyc
 *.pyo
 *.pyd
@@ -49,7 +33,6 @@ env/
 .venv/
 env/
 venv/
->>>>>>> webdev/main
 
 # Jupyter
 .ipynb_checkpoints/
@@ -60,16 +43,9 @@ venv/
 node_modules/
 dist/
 build/
-<<<<<<< HEAD
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-=======
 npm-debug.log
 yarn-debug.log
 yarn-error.log
->>>>>>> webdev/main
 
 # ============================
 # C/C++ Build Files
@@ -93,31 +69,23 @@ cmake_install.cmake
 Makefile
 
 # ============================
-<<<<<<< HEAD
-# Logs / Temporary files
-# ============================
-=======
 # Large or Generated Files
 # ============================
 
 # Do NOT track large binary assets
->>>>>>> webdev/main
 *.zip
 *.tar.gz
 *.7z
 *.rar
 *.iso
 
-<<<<<<< HEAD
-# Backups / old files
-=======
 # Office files (can be huge)
-*.pptx
-*.ppt
-*.xlsx
-*.xls
-*.docx
-*.doc
+# *.pptx
+# *.ppt
+# *.xlsx
+# *.xls
+# *.docx
+# *.doc
 
 # Media
 *.mp4
@@ -139,16 +107,10 @@ Makefile
 
 # Backups
 *.bak
->>>>>>> webdev/main
 *.old
 *.orig
 
 # ============================
 # Git
 # ============================
-<<<<<<< HEAD
 .gitignore_global
-
-=======
-.gitignore_global
->>>>>>> webdev/main

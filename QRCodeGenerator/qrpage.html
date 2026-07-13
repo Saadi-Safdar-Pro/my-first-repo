@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="qstyle.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="theme-btn" title="Toggle Dark Mode">🌙</button>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>QR Generator</h1>
+      <p class="subtitle">Fast, clean, and private</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Input Section -->
+      <section class="input-section">
+        <textarea id="qr-input" placeholder="Enter text or URL..." rows="3"></textarea>
+        <span id="input-type-badge" class="badge">Text</span>
+
+        <div class="controls">
+          <div class="control-group">
+            <label for="qr-size">Size: <span id="size-val">250</span>px</label>
+            <input type="range" id="qr-size" min="100" max="500" step="10" value="250">
+          </div>
+          
+          <div class="control-group">
+            <label for="qr-margin">Margin: <span id="margin-val">10</span>px</label>
+            <input type="range" id="qr-margin" min="0" max="50" step="5" value="10">
+          </div>
+
+          <div class="color-controls">
+            <div class="control-group">
+              <label for="qr-fg">Foreground</label>
+              <input type="color" id="qr-fg" value="#000000">
+            </div>
+            <div class="control-group">
+              <label for="qr-bg">Background</label>
+              <input type="color" id="qr-bg" value="#ffffff">
+            </div>
+          </div>
+
+          <div class="toggle-group">
+            <label>
+              <input type="checkbox" id="qr-ecc">
+              High Error Correction (H)
+            </label>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="primary-btn">Generate QR</button>
+      </section>
+
+      <!-- Preview Section -->
+      <section class="preview-section">
+        <div class="qr-box" id="qr-box">
+          <div class="placeholder">QR Preview</div>
+          <canvas id="qr-canvas"></canvas>
+        </div>
+
+        <div class="actions" style="display: none;" id="qr-actions">
+          <input type="text" id="filename" placeholder="filename (optional)">
+          <div class="btn-row">
+            <button id="download-btn" title="Download PNG">⬇️ Download</button>
+            <button id="copy-btn" title="Copy Image">📋 Copy</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- History Section -->
+    <section class="history-section">
+      <h3>Recent Codes</h3>
+      <ul id="history-list"></ul>
+    </section>
+  </div>
+
+  <script src="qrengine.js"></script>
+</body>
+</html>

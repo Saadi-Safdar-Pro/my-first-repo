@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern To-Do List</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="theme-switch">
+    <button id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+  </div>
+
+  <div class="todo-container">
+    <header class="app-header">
+      <h2>📝 My Tasks</h2>
+      <div class="task-stats">
+        <span id="totalTasks">Total: 0</span> | 
+        <span id="completedTasks">Completed: 0</span>
+      </div>
+    </header>
+
+    <div class="add-task-section">
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="What needs to be done?">
+        <button id="addTaskBtn" onclick="addTask()">Add</button>
+      </div>
+      <div class="task-options">
+        <input type="date" id="taskDueDate" title="Due Date (Optional)">
+        <select id="taskPriority" title="Priority">
+          <option value="low">Low Priority</option>
+          <option value="medium" selected>Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+        <input type="text" id="taskTag" placeholder="Tag (e.g. Work)" maxlength="10">
+      </div>
+    </div>
+
+    <div class="controls-section">
+      <input type="text" id="searchInput" placeholder="🔍 Search tasks..." oninput="updateUI()">
+      <div class="filters">
+        <select id="filterSelect" onchange="updateUI()">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <select id="sortSelect" onchange="updateUI()">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="priority">Highest Priority</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="bulk-actions">
+      <button onclick="toggleAllTasks()" class="secondary-btn">✔️ Mark All Complete</button>
+      <button onclick="clearCompleted()" class="secondary-btn danger">🗑️ Clear Completed</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>

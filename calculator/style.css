@@ -1,0 +1,332 @@
+:root {
+    --bg-color: #0d0f12;
+    --calc-bg: #15181e;
+    --panel-bg: #1a1d24;
+    --text-main: #ffffff;
+    --text-muted: #8b92a5;
+    --btn-bg: #20242d;
+    --btn-hover: #2a2f3a;
+    --btn-active: #1c2028;
+    --op-color: #ff6b6b;
+    --op-hover: #ff8787;
+    --eval-bg: #4ecdc4;
+    --eval-hover: #6ee7de;
+    --sci-color: #5f6c85;
+    --shadow-light: rgba(255, 255, 255, 0.02);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    --border-radius: 24px;
+    --btn-radius: 16px;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-container {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* History Panel */
+.history-panel {
+    background-color: var(--panel-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    width: 250px;
+    max-height: 600px;
+    box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--btn-bg);
+}
+
+.history-header h3 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+#clear-history {
+    background: none;
+    border: none;
+    color: var(--op-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: opacity 0.2s;
+}
+
+#clear-history:hover {
+    opacity: 0.8;
+}
+
+#history-list {
+    list-style: none;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-item {
+    background-color: var(--btn-bg);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    word-break: break-all;
+    animation: fadeIn 0.3s ease;
+}
+
+.history-expr {
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.history-res {
+    color: var(--eval-bg);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+/* Calculator */
+.calculator {
+    background-color: var(--calc-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 10px 10px 20px var(--shadow-dark),
+                -10px -10px 20px var(--shadow-light);
+}
+
+.display-container {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: inset 5px 5px 10px var(--shadow-dark),
+                inset -5px -5px 10px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.display-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.toggle-btn {
+    background-color: var(--btn-bg);
+    color: var(--text-muted);
+    border: none;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+    background-color: var(--btn-hover);
+    color: var(--text-main);
+}
+
+.expression-container {
+    min-height: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 15px;
+}
+
+.expression {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.main-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#result {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: right;
+    flex-grow: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+#result::-webkit-scrollbar {
+    display: none;
+}
+
+#copy-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px 0 5px 10px;
+    transition: color 0.2s;
+}
+
+#copy-btn:hover {
+    color: var(--text-main);
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    background-color: var(--btn-bg);
+    color: var(--text-main);
+    border: none;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+    box-shadow: 4px 4px 8px var(--shadow-dark),
+                -4px -4px 8px var(--shadow-light);
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active, .btn.active-simulate {
+    background-color: var(--btn-active);
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+                inset -3px -3px 6px var(--shadow-light);
+    transform: translateY(0);
+}
+
+.btn.sci {
+    color: var(--sci-color);
+    font-size: 0.95rem;
+}
+
+.btn.num {
+    font-size: 1.3rem;
+}
+
+.btn.op {
+    color: var(--op-color);
+    font-size: 1.4rem;
+}
+
+.btn.highlight {
+    color: var(--op-color);
+}
+
+.btn.clear {
+    color: var(--op-color);
+}
+
+.btn.eval {
+    background-color: var(--eval-bg);
+    color: #000;
+    font-size: 1.5rem;
+    grid-row: span 2;
+    box-shadow: 4px 4px 8px rgba(78, 205, 196, 0.2),
+                -4px -4px 8px var(--shadow-light);
+}
+
+.btn.eval:hover {
+    background-color: var(--eval-hover);
+}
+
+.btn.zero {
+    grid-column: span 2;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .history-panel {
+        width: 100%;
+        max-width: 420px;
+        order: 2;
+        max-height: 250px;
+    }
+
+    .calculator {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .keypad {
+        gap: 8px;
+    }
+    
+    .btn {
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .btn.num {
+        font-size: 1.2rem;
+    }
+
+    .btn.sci {
+        font-size: 0.85rem;
+    }
+    
+    #result {
+        font-size: 2rem;
+    }
+}

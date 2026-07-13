@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body class="theme-default">
+  <div class="theme-switch">
+    <button id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+  </div>
+
+  <div class="weather-container">
+    <header>
+      <h2>🌤️ Weather</h2>
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name...">
+        <button id="searchBtn" title="Search">🔍</button>
+        <button id="locationBtn" title="Use My Location">📍</button>
+      </div>
+      <div class="units-toggle">
+        <span class="unit active" id="unit-c">°C</span> | 
+        <span class="unit" id="unit-f">°F</span>
+      </div>
+    </header>
+
+    <div id="loading" style="display: none;">Fetching weather...</div>
+    <div id="error-msg" style="display: none;"></div>
+
+    <div id="weatherResult" style="display: none;">
+      <div class="current-weather">
+        <div class="weather-main">
+          <h3 id="cityName">City Name</h3>
+          <p id="weatherDesc">Description</p>
+          <div class="temp-display">
+            <span id="weatherIcon"></span>
+            <h1 id="temperature">0°</h1>
+          </div>
+        </div>
+        <div class="weather-details">
+          <p>Feels like: <span id="feelsLike">0°</span></p>
+          <p>Min/Max: <span id="tempMinMax">0° / 0°</span></p>
+          <p>Humidity: <span id="humidity">0%</span></p>
+          <p>Wind: <span id="windSpeed">0 m/s</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="forecast-container" style="display: none;">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-list" id="forecastList"></div>
+    </div>
+
+    <div class="history-section">
+      <h3>Recent Searches</h3>
+      <div id="historyList" class="history-list"></div>
+    </div>
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
